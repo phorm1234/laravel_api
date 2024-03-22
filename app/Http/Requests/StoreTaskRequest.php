@@ -1,6 +1,9 @@
 <?php
 
 namespace App\Http\Requests;
+// namespace App\Http\Requests\StoreTaskRequest;
+
+use App\Http\Controllers\Controller;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -11,7 +14,7 @@ class StoreTaskRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +25,7 @@ class StoreTaskRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required|string|max:255'
         ];
     }
 }
